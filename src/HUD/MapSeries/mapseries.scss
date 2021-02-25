@@ -1,10 +1,20 @@
+@keyframes banpick{
+	0%{
+		width:0px;
+		overflow: hidden;
+	}
+	100%{
+		width:192px;
+		overflow: visible;
+	}
+}
+
 .map_series_container {
 	position: fixed;
 	bottom: 48px;
 	left: 96px;
 	display: flex;
 	opacity: 1;
-	transition: opacity 0.5s;
 	flex-direction: row;
 
 	.veto_container {
@@ -12,13 +22,13 @@
 		color: white;
         height: 96px;
 		width:192px;
+		animation: banpick 1s;
 		margin-right: 64px;
 		background-size: 192px auto;
 		background-repeat: no-repeat;
 		position: relative;
-		transition: opacity 0.5s;
 
-		filter: drop-shadow(0px 0px 2px black);
+		filter: drop-shadow(0px 0px 4px black);
 
 
 		.veto_map_name {
@@ -72,6 +82,52 @@
 			}
 		}
 
+		.sidepickbar{
+			width: 32px;
+			height: 100%;
+			left: 192px;
+			background-color: var(--label);
+			position: absolute;
+			top: 0px;
+			transition: width 0.5s;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow: hidden;
+
+
+			div{
+				img{
+					max-width: 28px;
+					max-height: 28px;
+				}
+			}
+
+			.logo{
+				width:28px;
+				height:28px;
+			}
+
+			.arrow{
+				width:16px;
+				height: 16px;
+				background-color: white;
+				clip-path: polygon(0 0, 50% 100%, 100% 0);
+				margin-top: 8px;
+				margin-bottom: 8px;
+			}
+
+			img{
+				max-width: 28px;
+				max-height: 28px;
+			}
+
+			&.hidden{
+				width: 0px;
+			}
+		}
+
 		&.ban{
 			.bar{
 				background-color: var(--ban);
@@ -81,7 +137,7 @@
 		&.pick{
 			.bar{
 				background-color: var(--pick);
-			}	
+			}
 		}
 
 		&.decider{

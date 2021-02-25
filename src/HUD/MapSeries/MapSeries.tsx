@@ -3,6 +3,7 @@ import * as I from "csgogsi-socket";
 import { Match, Veto } from '../../api/interfaces';
 import TeamLogo from "../MatchBar/TeamLogo";
 import "./mapseries.scss";
+import {LogoCT, LogoT} from '../../assets/Icons';
 
 interface IProps {
     match: Match | null;
@@ -19,7 +20,7 @@ interface IVetoProps {
 
 class VetoEntry extends React.Component<IVetoProps> {
     render(){
-        const { veto, teams, active } = this.props;
+        const { veto, teams } = this.props;
         return <div className={`veto_container ${veto.mapName} ${veto.type === "ban" ? "ban" : ""}${veto.type === "pick" ? "pick" : ""}${veto.type === "decider" ? "decider" : ""}`}>
             <div className="veto_map_name">
                 {veto.mapName.replace("de_","")}
@@ -28,6 +29,13 @@ class VetoEntry extends React.Component<IVetoProps> {
             <div className="veto_picker">
                 <TeamLogo team={teams.filter(team => team.id === veto.teamId)[0]} />
             </div>
+
+            <div className={`sidepickbar ${veto.side === "NO" ? "hidden" : ""}`}>
+                <TeamLogo team={teams.filter(team => team.id !== veto.teamId)[0]} />
+                <div className="arrow"></div>
+                <img src={veto.side === "CT" ? LogoCT : LogoT} />
+            </div>
+            
         </div>
     }
 }
