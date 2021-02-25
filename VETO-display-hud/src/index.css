@@ -1,0 +1,46 @@
+@import "fonts/montserrat.css";
+@import "fonts/stratum2.css";
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Stratum2', 'Montserrat', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Louis George Cafe';
+  src: local('Louis George Cafe'), url('./fonts/Louis George Cafe.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rounded_Elegance';
+  src: local('Rounded_Elegance'), url('./fonts/Rounded_Elegance.ttf') format('truetype');
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --panel: rgba(0, 0, 0, 0.8);
+  --label: #333333;
+  --pick: #26CD00;
+  --ban: #FF0000;
+  --decider: #FFDD00;
+}
+
+
+

@@ -1,0 +1,12 @@
+{
+    "name":"VETO display tool",
+    "version":"1.0",
+    "author":"filous",
+    "legacy": false,
+    "radar": false,
+    "killfeed": false,
+    "boltobserv":{
+        "css":false,
+        "maps":false
+    }
+}
