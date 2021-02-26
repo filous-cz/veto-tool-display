@@ -1,7 +1,7 @@
 import React from "react";
 import * as I from "csgogsi-socket";
 import { Match, Veto } from '../../api/interfaces';
-import TeamLogo from "../MatchBar/TeamLogo";
+import TeamLogo from "./TeamLogo";
 import "./mapseries.scss";
 import {LogoCT, LogoT} from '../../assets/Icons';
 
