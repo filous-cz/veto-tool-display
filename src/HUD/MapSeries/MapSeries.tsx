@@ -49,7 +49,7 @@ export default class MapSeries extends React.Component<IProps> {
             <div className={`map_series_container`}>
                 {match.vetos.map(veto => {
                     if(!veto.mapName) return null;
-                    return <VetoEntry key={`${match.id}${veto.mapName}${veto.teamId}${veto.side}`} veto={veto} teams={teams} active={map.name.includes(veto.mapName)}/>
+                    return <VetoEntry key={`${match.id}${veto.mapName}${veto.teamId}`} veto={veto} teams={teams} active={map.name.includes(veto.mapName)}/>
                 })}
             </div>
         );
